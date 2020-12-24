@@ -245,6 +245,11 @@ DECLARE_TRACEPOINT(
   const void * timer_handle,
   int64_t period)
 
+DECLARE_TRACEPOINT(
+    rclcpp_timer_added,
+    const void * node_handle,
+    const void * timer_handle)
+
 /// `rclcpp_timer_callback_added`
 /**
  * Link a timer callback object to its `rcl_timer_t` handle.
