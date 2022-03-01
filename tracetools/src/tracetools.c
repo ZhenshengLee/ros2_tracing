@@ -273,6 +273,69 @@ void TRACEPOINT(
     goal_label);
 }
 
+//rei
+void TRACEPOINT(
+    rclcpp_subscribe,
+    const void *callback,
+    const uint64_t source_stamp,
+    const uint64_t received_stamp) {
+  CONDITIONAL_TP(
+      rclcpp_subscribe,
+      callback,
+      source_stamp,
+      received_stamp
+  );
+}
+
+void TRACEPOINT(
+  client_request,
+  const void *client,
+  const void *request)
+{
+  CONDITIONAL_TP(
+    client_request,
+    client,
+    request);
+}
+
+void TRACEPOINT(
+    service_request,
+    const void *service,
+    const uint64_t source_stamp,
+    const uint64_t received_stamp) {
+  CONDITIONAL_TP(
+      service_request,
+      service,
+      source_stamp,
+      received_stamp
+  );
+}
+
+void TRACEPOINT(
+  service_response,
+  const void *service,
+  const void *response)
+{
+  CONDITIONAL_TP(
+    service_response,
+    service,
+    response);
+}
+
+void TRACEPOINT(
+    client_response,
+    const void *client,
+    const uint64_t source_stamp,
+    const uint64_t received_stamp) {
+  CONDITIONAL_TP(
+      client_response,
+      client,
+      source_stamp,
+      received_stamp
+  );
+}
+//rei
+
 #ifndef _WIN32
 # pragma GCC diagnostic pop
 #else

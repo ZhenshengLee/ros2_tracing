@@ -302,6 +302,75 @@ TRACEPOINT_EVENT(
   )
 )
 
+//rei
+TRACEPOINT_EVENT(
+    TRACEPOINT_PROVIDER,
+    rclcpp_subscribe,
+    TP_ARGS(
+        const void *, callback_arg,
+        const uint64_t, source_stamp_arg,
+        const uint64_t, received_stamp_arg
+    ),
+    TP_FIELDS(
+        ctf_integer_hex(const void *, callback, callback_arg)
+        ctf_integer(const uint64_t, source_stamp, source_stamp_arg)
+        ctf_integer(const uint64_t, received_stamp, received_stamp_arg)
+    )
+)
+
+TRACEPOINT_EVENT(
+    TRACEPOINT_PROVIDER, client_request,
+    TP_ARGS(
+      const void *, client_arg,
+      const void *, request_arg
+    ),
+    TP_FIELDS(
+      ctf_integer_hex(const void *, client, client_arg)
+      ctf_integer_hex(const void *, request, request_arg)
+    )
+)
+
+TRACEPOINT_EVENT(
+    TRACEPOINT_PROVIDER, service_request,
+    TP_ARGS(
+        const void *, service_arg,
+        const uint64_t, source_stamp_arg,
+        const uint64_t, received_stamp_arg
+    ),
+    TP_FIELDS(
+        ctf_integer_hex(const void *, service, service_arg)
+        ctf_integer(const uint64_t, source_stamp, source_stamp_arg)
+        ctf_integer(const uint64_t, received_stamp, received_stamp_arg)
+    )
+)
+
+TRACEPOINT_EVENT(
+    TRACEPOINT_PROVIDER, service_response,
+    TP_ARGS(
+      const void *, service_arg,
+      const void *, response_arg
+    ),
+    TP_FIELDS(
+      ctf_integer_hex(const void *, service, service_arg)
+      ctf_integer_hex(const void *, response, response_arg)
+    )
+)
+
+TRACEPOINT_EVENT(
+    TRACEPOINT_PROVIDER, client_response,
+    TP_ARGS(
+        const void *, client_arg,
+        const uint64_t, source_stamp_arg,
+        const uint64_t, received_stamp_arg
+    ),
+    TP_FIELDS(
+        ctf_integer_hex(const void *, client, client_arg)
+        ctf_integer(const uint64_t, source_stamp, source_stamp_arg)
+        ctf_integer(const uint64_t, received_stamp, received_stamp_arg)
+    )
+)
+//rei
+
 #endif  // _TRACETOOLS__TP_CALL_H_
 
 #include <lttng/tracepoint-event.h>

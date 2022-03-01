@@ -78,6 +78,13 @@ DEFAULT_EVENTS_ROS = [
     'ros2:callback_end',
     'ros2:rcl_lifecycle_state_machine_init',
     'ros2:rcl_lifecycle_transition',
+    #rei
+    'ros2:rclcpp_subscribe',
+    'ros2:client_request',
+    'ros2:service_request',
+    'ros2:service_response',
+    'ros2:client_response',
+    #rei
 ]
 
 DEFAULT_EVENTS_UST = DEFAULT_EVENTS_ROS

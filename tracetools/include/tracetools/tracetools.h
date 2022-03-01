@@ -338,6 +338,39 @@ DECLARE_TRACEPOINT(
   const char * start_label,
   const char * goal_label)
 
+//rei
+DECLARE_TRACEPOINT(
+  rclcpp_subscribe,
+  const void *callback,
+  const uint64_t source_stamp,
+  const uint64_t received_stamp
+)
+
+DECLARE_TRACEPOINT(
+  client_request, 
+  const void *client,
+  const void *request)
+
+DECLARE_TRACEPOINT(
+  service_request,
+  const void *service,
+  const uint64_t source_stamp,
+  const uint64_t received_stamp
+)
+
+DECLARE_TRACEPOINT(
+  service_response, 
+  const void *service,
+  const void *response)
+  
+DECLARE_TRACEPOINT(
+  client_response,
+  const void *client,
+  const uint64_t source_stamp,
+  const uint64_t received_stamp
+)
+//rei
+
 #ifdef __cplusplus
 }
 #endif
